@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    int numero;
+    int producto = 1;
+    
+    cout << "Ingresa numeros positivos (negativo para terminar):" << endl;
+    cin >> numero;
+    
+    while (numero >= 0){
+        producto *= numero;
+        cin >> numero;
+    }
+    
+    cout << "El producto es: " << producto << endl;
+    return 0;
+}
