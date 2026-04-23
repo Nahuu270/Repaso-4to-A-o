@@ -1,0 +1,26 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main(){
+    srand(time(0));
+    int secreto = rand() % 100 + 1;
+    int intento;
+    
+    cout << "Adivina el numero de 1 - 100:" << endl;
+    cin >> intento;
+    
+    while (intento != secreto) {
+        if (intento > secreto) {
+            cout << "Estas Muy Alto!!" << endl;
+        } else {
+            cout << "Estas Muy Abajo!!" << endl;
+        }
+        
+        cout << "Intenta de nuevo:" << endl;
+        cin >> intento;
+    }
+    
+    cout << "Numero Correcto!" << endl;
+    return 0;
