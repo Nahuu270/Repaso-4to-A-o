@@ -1,0 +1,44 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main(){
+    srand(time(0));
+    
+    string palabras[] = {"hola", "gato", "casa", "perro", "codigo", "escuela", "aula", "basura", "gusto", "luna", "sol", "armador", "helicoptero"};
+    int total = 13;
+    
+    string palabra = palabras[rand() % total];
+    string progreso = "";
+    
+    for(int i = 0; i < palabra.length(); i++){
+        progreso += "_";
+    }
+    
+    char letra;
+    
+    cout << "Adivina la palabra" << endl;
+    
+    while (progreso != palabra){
+        cout << progreso << endl;
+        cout << "Ingrese una letra: " << endl;
+        cin >> letra;
+        
+        bool acierto = false;
+        
+        for (int i = 0; i < palabra.length(); i++){
+            if (palabra[i] == letra){
+                progreso[i] = letra;
+                acierto = true;
+            }
+        }
+        
+        if (!acierto){
+            cout << "Esta letra no esta en la palabra" << endl;
+        }
+    }
+    
+    cout << "Ganastes!! La palabra era: " << palabra << endl;
+    return 0;
+}
