@@ -1,0 +1,44 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main(){
+    srand(time(0));
+    int arr[5];
+    
+    cout << "Memoriza estos numero:" << endl;
+    
+    for (int i = 0; i < 5; i++){
+        arr[i] = rand() % 10;
+        cout << arr[i] << " " << endl;
+    }
+    
+    cout << "Presiona una tecla. . ." << endl;
+    cin.get();
+    cin.get();
+    
+    system("cls");
+    
+    int numero;
+    bool correcto = true;
+    
+    cout << "Ingresa los numeros:" << endl;
+    
+    for (int i = 0; i < 5; i++){
+        cin >> numero;
+        if (numero != arr[i]){
+            correcto = false;
+        }
+    }
+    
+    if (correcto) cout << "Ganaste!!";
+    else cout << "Perdiste!! Mas suerte en el siguiente intento :(" << endl;
+    
+    return 0;
+}
+
+
+
+
+
