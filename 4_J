@@ -1,0 +1,71 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main(){
+    srand(time(0));
+
+    string palabras[] = {"gato", "perro", "codigo", "juego", "computadora", "helicoptero", "auto", "helado", "persona", "luna"};
+    int total = 10;
+
+    string palabra = palabras[rand() % total];
+    string progreso = "";
+
+    for(int i = 0; i < palabra.length(); i++){
+        progreso += "_";
+    }
+
+    int intentos = 6;
+    char letra;
+    string usadas = "";
+
+    cout << "=== JUEGO DE ADIVINANZA ===" << endl;
+
+    while(progreso != palabra && intentos > 0){
+        cout << "Palabra: " << progreso << endl;
+        cout << "Intentos restantes: " << intentos << endl;
+        cout << "Letras usadas: '" << usadas << "' " << endl;
+        
+        cout << "Ingresa una letra: " << endl;
+        cin >> letra;
+        
+        bool repetida = false;
+        for(int i = 0; i < usadas.length(); i++){
+            if(usadas[i] == letra){
+                repetida = true;
+            }
+        }
+        
+        if(repetida){
+            cout << "Ya usaste esa letra!" << endl;
+            continue;
+        }
+        
+        usadas += letra;
+        
+        bool acierto = false;
+        
+        for(int i = 0; i < palabra.length(); i++){
+            if(palabra[i] == letra){
+                progreso[i] = letra;
+                acierto = true;
+            }
+        }
+        
+        if(acierto){
+            cout << "Bien!!" << endl;
+        } else {
+            cout << "Mal!!" << endl;
+            intentos--;
+        }
+    }
+    
+    if(progreso == palabra){
+        cout << "Ganaste! La palabra era: " << palabra << endl;
+    } else {
+        cout << "Perdiste! La palabra era: " << palabra << endl;
+    }
+    
+    return 0;
+}
