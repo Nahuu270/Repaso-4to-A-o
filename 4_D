@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    int numero;
+    cout << "Cantidad de elementos: " << endl;
+    cin >> numero;
+    
+    int arr[numero];
+    int suma = 0;
+    
+    for (int i = 0; i < numero; i++){
+        cout << "Elementos " << i + 1 << ": " << endl;
+        cin >> arr[i];
+        suma += arr [i];
+    }
+    
+    double promedio = (double)suma / numero;
+    
+    cout << "El promedio es: " << promedio << endl;
+    return 0;
+}
