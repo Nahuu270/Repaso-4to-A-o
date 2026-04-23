@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    int numero1, numero2;
+    
+    cout << "Ingrese un numero:" << endl;
+    cin >> numero1;
+    
+    cout << "Ingrese otro numero:" << endl;
+    cin >> numero2;
+    
+    if(numero1 > numero2){
+        cout << "El primer numero: " << numero1 << " es mayor que el segundo numero: " << numero2 << endl;
+    }
+    
+    else if(numero1 < numero2){
+        cout << "El segundo numero: " << numero2 << " es mayor que el primer numero: " << numero1 << endl;
+    }
+    
+    else{
+        cout << "Los numero son iguales" << endl;
+    }
+    return 0;
+}
