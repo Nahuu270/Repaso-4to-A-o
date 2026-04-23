@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    int numero;
+    int suma = 0;
+    
+    cout << "Ingresa numeros enteros positivos (se sumara todo hasta que pongas un entero negativo):" << endl;
+    cin >> numero;
+    
+    while (numero >= 0) {
+        suma += numero;
+        cin >> numero;
+    }
+    
+    cout << "La suma es: " << suma << endl;
+    return 0;
+}
