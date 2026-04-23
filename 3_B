@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    string texto;
+    char letra;
+    int i = 0, contador = 0;
+    
+    cout << "Ingrese un Texto:" << endl;
+    getline(cin, texto);
+    
+    cout << "Ingrese una Letra:" << endl;
+    cin >> letra;
+    
+    while (i < texto.length()) {
+        if (texto[i] == letra) {
+            contador ++;
+        }
+        
+        i++;
+    }
+    
+    cout << "La letra aperece: " << contador << " veces" << endl;
+    return 0;
+}
